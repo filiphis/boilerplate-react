@@ -4,7 +4,7 @@ import { Main } from '.'
 
 describe('Component Main', () => {
   it('should render the heading', () => {
-    render(<Main />)
+    render(<Main title="React Avançado" description="React" />)
 
     expect(
       screen.getByRole('heading', { name: 'React Avançado' })
@@ -12,7 +12,9 @@ describe('Component Main', () => {
   })
 
   it('should render the colors correctly', () => {
-    const { container } = render(<Main />)
+    const { container } = render(
+      <Main title="React Avançado" description="React" />
+    )
 
     expect(container.firstChild).toHaveStyle({ 'background-color': '#06092b' })
   })
